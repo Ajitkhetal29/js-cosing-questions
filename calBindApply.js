@@ -1,15 +1,34 @@
 function sayHello(msg) {
-    console.log(`${msg} , ${this.name}`)
+  console.log(`${msg}, ${this.name}`);
 }
 
-const person = {name : "happy"}
+const person = {
+    name : "sam"
+}
+
+sayHello.call(person,"Hello")
 
 
-// call
+var student = {
+    age : 23,
+    getAge : function (){
+        return this.age
+    }
+}
 
-// sayHello.call(person, "Hello")
-// sayHello.apply(person, ["Hello", "Namaste"])
+var student1 = {age : 25}
 
-const greetings = sayHello.bind(person)
-greetings("Hello");
+console.log(student.getAge.call(student1)
+);
 
+
+// apply
+sayHello.call(person,["hii"])
+
+
+
+//bind 
+
+const greeting = sayHello.bind(person);
+
+greeting("Namaste")

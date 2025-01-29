@@ -2,11 +2,13 @@ function multiply(a, b) {
   return a * b;
 }
 
-function curriedDun(n) {
-  return function (m) {
-    return n * m;
-  };
+function curriedFun(n){
+  return function (m){
+    return n*m
+  }
 }
 
-const fun1 = curriedDun(5);
-console.log(fun1(6));
+const fun1 = curriedFun(3);
+const fun2 = fun1(3)
+
+console.log(typeof(fun2));
